@@ -1,6 +1,7 @@
-import streamlit as st
-
-col1, col2 = st.columns(2)
-with col1: 
-    st.image("sj.jpeg")
-    st.write("SJ Dashboard")
+def application(environ, start_response):
+    status = '200 OK'
+    output = b'Hello From Python!\n'
+    response_headers = [('Content-type', 'text/plain'),
+                        ('Content-Length', str(len(output)))]
+    start_response(status, response_headers)
+    return [output] 
